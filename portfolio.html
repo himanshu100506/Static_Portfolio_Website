@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio — Your Name</title>
+    <link rel="stylesheet" href="styles/portfolio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <h1 class="logo">Your Name</h1>
+        <nav>
+          <ul class="nav">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container" id="home">
+        <div class="hero-left">
+          <h2 class="hero-title">Hi, I'm <span class="accent">Your Name</span></h2>
+          <p class="hero-sub">A front-end developer who builds accessible, responsive web experiences.</p>
+          <p><a class="btn" href="#contact">Get in touch</a></p>
+        </div>
+        <div class="hero-right">
+          <img class="avatar" src="https://via.placeholder.com/220" alt="Avatar placeholder">
+        </div>
+      </section>
+
+      <section id="about" class="container about">
+        <h3>About</h3>
+        <p>I design and build web interfaces using HTML, CSS and modern JavaScript. I care about performance, accessibility and clean design. Replace this paragraph with your bio.</p>
+      </section>
+
+      <section id="projects" class="container projects">
+        <h3>Projects</h3>
+        <div class="grid">
+          <article class="card">
+            <img src="https://via.placeholder.com/600x360" alt="Project 1">
+            <div class="card-body">
+              <h4>Project One</h4>
+              <p>Short description of the project. Add a link to a live demo or repo.</p>
+              <p><a href="#">View</a></p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://via.placeholder.com/600x360" alt="Project 2">
+            <div class="card-body">
+              <h4>Project Two</h4>
+              <p>Short description of the project.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="https://via.placeholder.com/600x360" alt="Project 3">
+            <div class="card-body">
+              <h4>Project Three</h4>
+              <p>Short description of the project.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="container skills">
+        <h3>Skills</h3>
+        <ul class="skill-list">
+          <li>HTML</li>
+          <li>CSS / Flexbox / Grid</li>
+          <li>JavaScript (ES6+)</li>
+          <li>Responsive Design</li>
+          <li>Accessibility</li>
+        </ul>
+      </section>
+
+      <section id="contact" class="container contact">
+        <h3>Contact</h3>
+        <p>Send me an email at <a href="mailto:you@example.com">you@example.com</a> or use the form below.</p>
+        <form class="contact-form" action="#" onsubmit="alert('This demo form does not submit — replace with your endpoint.'); return false;">
+          <label>
+            Name
+            <input type="text" name="name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required>
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <p><button class="btn" type="submit">Send</button></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <small>© <span id="year"></span> Your Name — Built with HTML & CSS.</small>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+      // Smooth scroll for internal links
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', e=>{
+          const href = a.getAttribute('href');
+          if(href.length>1){
+            e.preventDefault();
+            document.querySelector(href).scrollIntoView({behavior:'smooth'});
+          }
+        })
+      });
+    </script>
+  </body>
+</html>
